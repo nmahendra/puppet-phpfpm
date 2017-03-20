@@ -1,4 +1,4 @@
-[<%= @servername %]
+[<%= @servername %>]
 listen = 127.0.0.1:9000
 listen.allowed_clients = 127.0.0.1
 user = apache
@@ -14,10 +14,10 @@ php_admin_flag[log_errors] = on
 php_value[session.save_handler] = files
 php_value[session.save_path] = /var/lib/php/session
 
-env[CRAFT_DATABASE_HOST] = local
-env[CRAFT_DATABASE_USER] = root
-env[CRAFT_DATABASE_PASS] = 1234
-env[CRAFT_DATABASE_NAME] = 1234
+env[CRAFT_DATABASE_HOST] = <%= @db_host =%> 
+env[CRAFT_DATABASE_USER] = <%= @db_user =%> 
+env[CRAFT_DATABASE_PASS] = <%= @db_password =%> 
+env[CRAFT_DATABASE_NAME] = <%= @db_name =%>  
 
 env[GigyaAPIKey] = '000000000000000000000000000000000000000000000'
 env[GigyaSecretKey] = '00000000000000000000000000000000000000000000'
